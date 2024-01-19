@@ -16,4 +16,16 @@ public class UsuarioService {
     public List<UserDto> getAllUsers(){
         return client.getUsers();
     }
+
+    public void saveUser(UserDto user){
+        // TO-DO
+    }
+
+    public void udpateUser(UserDto user){
+
+    }
+
+    public void deleteUser(Long id){
+
+    }
 }

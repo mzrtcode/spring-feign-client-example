@@ -12,5 +12,5 @@ public interface IUserFeignClient {
 
     @GetMapping(value = "/users", consumes = MediaType.APPLICATION_NDJSON_VALUE)
     List<UserDto> getUsers();
-
+    
 }
