@@ -2,10 +2,9 @@ package com.feigntest.feign.controller;
 
 import com.feigntest.feign.dto.UserDto;
 import com.feigntest.feign.service.UsuarioService;
+import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +19,23 @@ public class UserController {
     public List<UserDto> getAllUsers(){
         return usuarioService.getAllUsers();
     }
+
+    @PostMapping()
+    public UserDto saveUser(UserDto user){
+        return usuarioService.saveUser(user);
+    }
+
+    @PutMapping("/{id}")
+    public void updateUser(@PathParam("id") Long id, UserDto user){
+        usuarioService.udpateUser(id, user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathParam("id") Long id){
+        usuarioService.deleteUser(id);
+    }
+
+
+
 
 }

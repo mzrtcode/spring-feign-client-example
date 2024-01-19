@@ -20,7 +20,7 @@ public interface IUserFeignClient {
 
     @PutMapping(value = "/users/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     void updateUser(@PathParam("id") Long id, @RequestBody UserDto userDto);
-    
+
     @DeleteMapping(value = "/users/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     void deleteUser(@PathParam("id") Long id);
     

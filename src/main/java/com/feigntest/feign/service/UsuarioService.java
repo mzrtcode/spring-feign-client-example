@@ -4,6 +4,7 @@ import com.feigntest.feign.client.IUserFeignClient;
 import com.feigntest.feign.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,15 +19,15 @@ public class UsuarioService {
         return client.getUsers();
     }
 
-    public void saveUser(UserDto user){
-        // TO-DO
+    public UserDto saveUser(UserDto user){
+        return client.saveUser(user);
     }
 
-    public void udpateUser(UserDto user){
-
+    public void udpateUser(Long id, UserDto user){
+        client.updateUser(id, user);
     }
 
     public void deleteUser(Long id){
-
+        client.deleteUser(id);
     }
 }
